@@ -1,66 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="0dp">
 
-    <LinearLayout
+    <!-- Toolbar giữ nguyên, không thay đổi -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_manhinhchinh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_background"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:titleTextColor="@android:color/white"
+        android:layout_alignParentTop="true">
 
-        <Toolbar
-            android:id="@+id/toolbar_manhinhchinh"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_background"
-            android:elevation="4dp"
-            android:title="Hotel Booking"
-            android:titleTextColor="@android:color/white" />
+            android:layout_height="wrap_content">
 
-        <ViewFlipper
-            android:id="@+id/viewflipper"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/banner1" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/banner2" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/banner3" />
-
-        </ViewFlipper>
-        <LinearLayout
-            android:background="#0297F2"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
             <TextView
-                android:textColor="@color/white"
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel Booking"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="Khách sạn"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+            <SearchView
+                android:id="@+id/searchView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <GridView
-                android:id="@+id/gridview"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="150dp"
+                android:iconifiedByDefault="false"
+                android:layout_marginEnd="8dp"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Phần nội dung có thanh cuộn -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_manhinhchinh"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ViewFlipper -->
+            <ViewFlipper
+                android:id="@+id/viewflipper"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banner1"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banner2"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/banner3"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/tet2025"
+                    android:scaleType="fitXY"/>
+            </ViewFlipper>
+
+            <!-- GridView với chiều cao cố định để hiển thị nhiều item -->
+            <LinearLayout
+                android:background="#0297F2"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
-            </GridView>
 
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Khách sạn"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- GridView bao trong LinearLayout để kích thước phù hợp -->
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="1"
+                    android:verticalSpacing="10dp"
+                    android:horizontalSpacing="10dp"
+                    android:stretchMode="columnWidth"/>
+            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
-
+    </ScrollView>
 
 </RelativeLayout>

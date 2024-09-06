@@ -3,20 +3,26 @@ package com.cmd.hotelapp.Model;
 public class Hotel {
     private String name;
     private String description;
-    private double price;
+    private String price;
+    private String address;
     private String image;
+    private String imgRoom;
+    private String descriptionRoom;
     private double sale;
     private double quality;
 
     public Hotel() {
-        // Firestore yêu cầu constructor rỗng
+
     }
 
-    public Hotel(String name, String description, double price, String imageUrl, double sale, double quality) {
+    public Hotel(String name, String description, String price, String address, String descriptionRoom, String image, String imgRoom, double sale, double quality) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.address = address;
         this.image = image;
+        this.imgRoom = imgRoom;
+        this.descriptionRoom = descriptionRoom;
         this.sale = sale;
         this.quality = quality;
     }
@@ -29,13 +35,23 @@ public class Hotel {
         return description;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public String getImage() {
         return image;
     }
+
+    public String getImgRoom() {
+        return imgRoom;
+    }
+
+    public String getDescriptionRoom() { return descriptionRoom; }
 
     public double getSale(){
         return sale;
