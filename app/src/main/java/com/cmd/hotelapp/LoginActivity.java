@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,16 @@ public class LoginActivity extends Activity {
                 }
             }
         });
+
+        TextView registerTextView = findViewById(R.id.text_register);
+        registerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang activity_register
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void validateCredentials(String email, String password) {
@@ -69,4 +80,6 @@ public class LoginActivity extends Activity {
                     }
                 });
     }
+
+
 }

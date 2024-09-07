@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HotelApp</string>
     <string name="action_seach">Search</string>
+    <string-array name="roles_array">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
 </resources>
