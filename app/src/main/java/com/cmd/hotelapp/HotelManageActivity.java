@@ -1,6 +1,7 @@
 package com.cmd.hotelapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,11 +44,13 @@ public class HotelManageActivity extends Activity {
         loadHotelList();
 
         // Xử lý sự kiện thêm khách sạn
+        Button addHotelButton = findViewById(R.id.add_hotel_button);
         addHotelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Mở một activity khác để thêm khách sạn mới
-                addNewHotel();
+                // Mở AddHotelActivity khi nhấn nút
+                Intent intent = new Intent(HotelManageActivity.this, AddHotelActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -71,10 +74,5 @@ public class HotelManageActivity extends Activity {
                 }
             }
         });
-    }
-
-    // Thêm khách sạn mới
-    private void addNewHotel() {
-        // Chuyển đến Activity thêm khách sạn
     }
 }

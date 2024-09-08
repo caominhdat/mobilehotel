@@ -8,11 +8,9 @@ public class Hotel {
     private String image; // URI hoặc URL của hình ảnh khách sạn
     private String imgRoom; // URI hoặc URL của hình ảnh phòng
     private String descriptionRoom; // Mô tả phòng
-    private double sale; // Giảm giá
-    private double quality; // Đánh giá chất lượng
 
     public Hotel() {
-        // Constructor rỗng
+
     }
 
     public Hotel(String name, String description, String price, String address, String descriptionRoom, String image, String imgRoom, double sale, double quality) {
@@ -23,8 +21,6 @@ public class Hotel {
         this.image = image;
         this.imgRoom = imgRoom;
         this.descriptionRoom = descriptionRoom;
-        this.sale = sale;
-        this.quality = quality;
     }
 
     // Các phương thức getter
@@ -56,13 +52,6 @@ public class Hotel {
         return descriptionRoom;
     }
 
-    public double getSale() {
-        return sale;
-    }
-
-    public double getQuality() {
-        return quality;
-    }
 
     // Các phương thức setter
     public void setName(String name) {
@@ -93,14 +82,6 @@ public class Hotel {
         this.descriptionRoom = descriptionRoom;
     }
 
-    public void setSale(double sale) {
-        this.sale = sale;
-    }
-
-    public void setQuality(double quality) {
-        this.quality = quality;
-    }
-
     // Phương thức toString()
     @Override
     public String toString() {
@@ -112,13 +93,6 @@ public class Hotel {
                 ", image='" + image + '\'' +
                 ", imgRoom='" + imgRoom + '\'' +
                 ", descriptionRoom='" + descriptionRoom + '\'' +
-                ", sale=" + sale +
-                ", quality=" + quality +
                 '}';
-    }
-
-    // Phương thức tính giá sau giảm giá
-    public double getDiscountedPrice() {
-        return Double.parseDouble(price) * (1 - sale / 100);
     }
 }

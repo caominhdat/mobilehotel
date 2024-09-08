@@ -66,6 +66,13 @@
             android:theme="@style/Theme.HotelApp">
         </activity>
 
+        <activity
+            android:name=".AddHotelActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HotelApp">
+        </activity>
+
     </application>
 
 </manifest>
