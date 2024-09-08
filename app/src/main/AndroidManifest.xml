@@ -45,6 +45,27 @@
             android:theme="@style/Theme.HotelApp">
         </activity>
 
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HotelApp">
+        </activity>
+
+        <activity
+            android:name=".HotelManageActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HotelApp">
+        </activity>
+
+        <activity
+            android:name=".HotelOrderActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HotelApp">
+        </activity>
+
     </application>
 
 </manifest>

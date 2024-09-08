@@ -1,6 +1,8 @@
 package com.cmd.hotelapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends Activity {
 
@@ -23,6 +27,7 @@ public class LoginActivity extends Activity {
     private EditText passwordEditText;
     private Button loginButton;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class LoginActivity extends Activity {
 
         // Khởi tạo Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         usernameEditText = findViewById(R.id.username_input);
         passwordEditText = findViewById(R.id.password_input);
@@ -67,12 +73,11 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Đăng nhập thành công, chuyển sang MainActivity
+                            // Đăng nhập thành công, kiểm tra role
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(LoginActivity.this, "Login successful! Welcome " + (user != null ? user.getEmail() : ""), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                            if (user != null) {
+                                checkUserRole(user.getUid());
+                            }
                         } else {
                             // Nếu đăng nhập thất bại, hiển thị thông báo lỗi
                             Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -81,5 +86,60 @@ public class LoginActivity extends Activity {
                 });
     }
 
+    private void checkUserRole(String userId) {
+        db.collection("user").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null && document.exists()) {
+                        String role = document.getString("role");
 
+                        // Kiểm tra role là Admin hay User
+                        if ("Admin".equalsIgnoreCase(role)) {
+                            showAdminOptionDialog();
+                        } else {
+                            // Chuyển đến MainActivity nếu là User
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Failed to get user role.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "Error checking role: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    private void showAdminOptionDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Chọn hành động");
+        builder.setMessage("Bạn muốn vào Trang quản trị hay Trang chính?");
+
+        builder.setPositiveButton("Trang Quản trị", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Chuyển đến trang quản trị
+                Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("Trang chính", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Chuyển đến MainActivity
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        builder.show();
+    }
 }

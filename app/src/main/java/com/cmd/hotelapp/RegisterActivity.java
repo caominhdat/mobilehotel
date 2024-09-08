@@ -127,16 +127,6 @@ public class RegisterActivity extends Activity {
                                 }
                             }
                         });
-
-//                if (role.equals("Admin")) {
-//                    showAdminOptionDialog();
-//                } else {
-//                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-
-
             }
         });
     }
@@ -153,7 +143,7 @@ public class RegisterActivity extends Activity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -163,30 +153,5 @@ public class RegisterActivity extends Activity {
                 });
     }
 
-//    private void showAdminOptionDialog() {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Chọn hành động");
-//        builder.setMessage("Bạn muốn vào trang Quản trị hay trang chính?");
-//
-//        builder.setPositiveButton("Quản trị", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // Chuyển đến trang quản trị
-//                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        builder.setNegativeButton("Trang chính", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // Chuyển đến trang chính
-//                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        builder.show();
-//    }
 
 }
