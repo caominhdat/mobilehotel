@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.cmd.hotelapp-mergeDebugResources-66:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nhoxd\\.gradle\\caches\\transforms-4\\bc865cd1d8c47c7ab2cbf9c6fe95d730\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -5,4 +5,5 @@
         <item>User</item>
         <item>Admin</item>
     </string-array>
+    <string name="select">Select Item</string>
 </resources>
