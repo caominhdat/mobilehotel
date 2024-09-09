@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/admin">
+
+    <!-- Header với hình ảnh và tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/icon_account_circle"
+            android:contentDescription="Admin Icon"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản trị hệ thống"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#07201D"/>
+    </LinearLayout>
+
+    <!-- Danh sách quản trị với CardView để sinh động hơn -->
+    <ListView
+        android:id="@+id/admin_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp" />
+
+</LinearLayout>

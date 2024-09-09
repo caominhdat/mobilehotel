@@ -86,7 +86,7 @@
 
             <!-- GridView với chiều cao cố định để hiển thị nhiều item -->
             <LinearLayout
-                android:background="#0297F2"
+                android:background="#F49A7D"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
