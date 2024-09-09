@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.cmd.hotelapp-mergeDebugResources-66:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nhoxd\\.gradle\\caches\\transforms-4\\bc865cd1d8c47c7ab2cbf9c6fe95d730\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}

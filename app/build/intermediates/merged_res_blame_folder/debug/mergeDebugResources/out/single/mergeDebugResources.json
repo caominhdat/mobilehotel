@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_banner1.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\banner1.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_icon_search.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\icon_search.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_imggmail.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\imggmail.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_banner3.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\banner3.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_rounded_corner.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\rounded_corner.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_login_background.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\login_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_banner2.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\banner2.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_icon_tien.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\icon_tien.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_grid_item.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\grid_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_imgfacebook.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\imgfacebook.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_activity_hotel_booking.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\activity_hotel_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_icon_map.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\icon_map.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.cmd.hotelapp-debug-68:/layout_activity_hotel_booking.xml.flat",
+        "source": "com.cmd.hotelapp-main-70:/layout/activity_hotel_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_icon_ghichu.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\icon_ghichu.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\layout_activity_hotel_detail.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\layout\\activity_hotel_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_icon_account_circle.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\icon_account_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\drawable_tet2025.png.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\drawable\\tet2025.png"
+    },
+    {
+        "merged": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-debug-68:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\nhoxd\\.gradle\\daemon\\8.7\\com.cmd.hotelapp-main-70:\\xml\\data_extraction_rules.xml"
+    }
+]

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,8 @@ public class HotelDetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_detail);
+        Button bookingButton = findViewById(R.id.bookButton);
+
 
         // Lấy dữ liệu khách sạn từ Intent
         Intent intent = getIntent();
@@ -34,6 +37,7 @@ public class HotelDetailActivity extends Activity {
         TextView addressTextView = findViewById(R.id.hotel_address);
         ImageView roomImageView = findViewById(R.id.room_image);
         TextView roomDescriptionTextView = findViewById(R.id.room_description);
+
 
         nameTextView.setText(hotelName);
         descriptionTextView.setText(hotelDescription);
@@ -68,6 +72,17 @@ public class HotelDetailActivity extends Activity {
                 }
             }
         });
+        //Lấy thông tin khách sạn để hiển thị bên phiếu đặt phòng
+        bookingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(HotelDetailActivity.this, HotelBookingActivity.class);
+                intent1.putExtra("hotel_name", hotelName);
+                intent1.putExtra("hotel_price", hotelPrice);
+                intent1.putExtra("hotel_address", hotelAddress);
+                startActivity(intent1);
+            }
+        }) ;
 
     }
 
