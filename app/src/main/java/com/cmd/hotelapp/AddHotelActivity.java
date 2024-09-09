@@ -14,7 +14,10 @@ import com.cmd.hotelapp.Model.Hotel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Collections;
 
 public class AddHotelActivity extends Activity {
 
@@ -55,29 +58,57 @@ public class AddHotelActivity extends Activity {
         String imgRoom = editRoomImage.getText().toString().trim();
         String descriptionRoom = editDescriptionRoom.getText().toString().trim();
 
-
         if (name.isEmpty() || address.isEmpty() || price.isEmpty() || description.isEmpty() || image.isEmpty() || imgRoom.isEmpty() || descriptionRoom.isEmpty()) {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Hotel newHotel = new Hotel(name, description, price, address, descriptionRoom, image, imgRoom, 0, 0);
+        // Lấy giá trị currentId từ collection Counters và document HotelCounter
+        final DocumentReference counterRef = db.collection("Counters").document("HotelCounter");
+        counterRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        // Lấy currentId
+                        long currentId = document.getLong("currentId");
 
-        db.collection("Hotel")
-                .add(newHotel)
-                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(AddHotelActivity.this, "Khách sạn đã được thêm thành công!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(AddHotelActivity.this, HotelManageActivity.class);
-                            startActivity(intent);
+                        // Tăng currentId cho khách sạn mới
+                        long newId = currentId + 1;
 
-                            finish(); // Đóng Activity sau khi thêm
-                        } else {
-                            Toast.makeText(AddHotelActivity.this, "Có lỗi xảy ra! Thử lại.", Toast.LENGTH_SHORT).show();
-                        }
+                        // Tạo khách sạn mới
+                        Hotel newHotel = new Hotel(name, description, price, address, descriptionRoom, image, imgRoom, 0, 0);
+
+                        // Thêm khách sạn vào Firestore với ID mới là số tăng dần
+                        db.collection("Hotel").document(String.valueOf(newId))
+                                .set(newHotel)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            // Cập nhật lại currentId trong document Counters
+                                            counterRef.update("currentId", newId);
+
+                                            Toast.makeText(AddHotelActivity.this, "Khách sạn đã được thêm thành công!", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(AddHotelActivity.this, HotelManageActivity.class);
+                                            startActivity(intent);
+
+                                            finish(); // Đóng Activity sau khi thêm
+                                        } else {
+                                            Toast.makeText(AddHotelActivity.this, "Có lỗi xảy ra! Thử lại.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                    } else {
+                        // Nếu document không tồn tại, khởi tạo currentId = 1
+                        counterRef.set(Collections.singletonMap("currentId", 1L));
+                        Toast.makeText(AddHotelActivity.this, "Đang khởi tạo bộ đếm. Thử lại sau.", Toast.LENGTH_SHORT).show();
                     }
-                });
+                } else {
+                    Toast.makeText(AddHotelActivity.this, "Lỗi khi lấy ID!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

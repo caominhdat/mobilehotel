@@ -1,94 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thêm Khách Sạn Mới"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:paddingBottom="16dp" />
-
-    <EditText
-        android:id="@+id/edit_hotel_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tên khách sạn"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_hotel_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Địa chỉ"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm Khách Sạn Mới"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:paddingBottom="16dp" />
 
-    <EditText
-        android:id="@+id/edit_hotel_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Giá"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"/>
+        <EditText
+            android:id="@+id/edit_hotel_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên khách sạn"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/edit_hotel_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mô tả khách sạn"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"/>
+        <EditText
+            android:id="@+id/edit_hotel_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/edit_hotel_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="URL hình khách sạn"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp"/>
+        <EditText
+            android:id="@+id/edit_hotel_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Giá"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/edit_room_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="URL hình phòng"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp"/>
+        <EditText
+            android:id="@+id/edit_hotel_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô tả khách sạn"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/edit_room_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mô tả phòng"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"/>
+        <EditText
+            android:id="@+id/edit_hotel_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL hình khách sạn"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/button_add_hotel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Thêm Khách Sạn"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
-        android:padding="12dp"/>
-</LinearLayout>
+        <EditText
+            android:id="@+id/edit_room_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL hình phòng"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/edit_room_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô tả phòng"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/button_add_hotel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm Khách Sạn"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"
+            android:padding="12dp"/>
+    </LinearLayout>
+</ScrollView>

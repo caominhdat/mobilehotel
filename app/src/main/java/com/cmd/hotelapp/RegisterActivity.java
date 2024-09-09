@@ -1,11 +1,9 @@
 package com.cmd.hotelapp;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,8 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-import androidx.appcompat.app.AlertDialog;
-
 
 import androidx.annotation.NonNull;
 
@@ -24,7 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Transaction;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends Activity {
 
@@ -114,8 +114,8 @@ public class RegisterActivity extends Activity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    // Đăng ký thành công, lưu thông tin người dùng vào Firestore
-                                    saveUserInfoToFirestore(firstName, lastName, email, phone, role);
+                                    // Đăng ký thành công, lấy user ID tự tăng
+                                    incrementUserId(firstName, lastName, email, phone, role);
                                 } else {
                                     // Kiểm tra xem lỗi có phải do email đã được sử dụng không
                                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -131,27 +131,34 @@ public class RegisterActivity extends Activity {
         });
     }
 
-    private void saveUserInfoToFirestore(String firstName, String lastName, String email, String phone, String role) {
-        String userId = mAuth.getCurrentUser().getUid();
+    // Hàm tự tăng ID và lưu thông tin user vào Firestore
+    private void incrementUserId(final String firstName, final String lastName, final String email, final String phone, final String role) {
+        final DocumentReference counterRef = db.collection("counters").document("UserCounter");
 
-        User newUser = new User(firstName, lastName, email, phone, role);
+        db.runTransaction((Transaction.Function<Void>) transaction -> {
+            Long currentCount = transaction.get(counterRef).getLong("count");
+            if (currentCount == null) {
+                // Tạo mới nếu chưa tồn tại
+                transaction.set(counterRef, new HashMap<String, Object>() {{ put("count", 1L); }});
+                currentCount = 0L; // Bắt đầu từ 0
+            }
+            long newCount = currentCount + 1;
+            transaction.update(counterRef, "count", newCount);
 
-        db.collection("user").document(userId)
-                .set(newUser)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "Lưu thông tin người dùng thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+            // Tạo user với ID mới
+            User newUser = new User(firstName, lastName, email, phone, role);
+            db.collection("user").document(String.valueOf(newCount)).set(newUser);
+
+            return null;
+        }).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(RegisterActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(RegisterActivity.this, "Lưu thông tin người dùng thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-
 }
