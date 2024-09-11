@@ -70,6 +70,7 @@ public class HotelBookingActivity extends Activity {
         TextView nameTextView = findViewById(R.id.hotel_name);
         TextView priceTextView = findViewById(R.id.hotel_price);
         TextView addressTextView = findViewById(R.id.hotel_address);
+        TextView numOfPeople = findViewById(R.id.hotel_customer_num);
         TextView bookingButton = findViewById(R.id.hotel_booking_button);
 
         nameTextView.setText(hotelName);
@@ -140,18 +141,25 @@ public class HotelBookingActivity extends Activity {
                 String BookDate = mDisplayDate1.getText().toString();
                 String CheckoutDate = mDisplayDate2.getText().toString();
                 String UserEmail = user.getEmail();
+                String NumberOfPeople = numOfPeople.getText().toString();
+                if (BookDate.isEmpty() || CheckoutDate.isEmpty() || NumberOfPeople.isEmpty()) {
+                    Toast.makeText(HotelBookingActivity.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                } else {
+                    return;
+                }
                 //
                 Map<String,Object> ticket = new HashMap<>();
                 ticket.put("Hotel Name", HotelName);
                 ticket.put("Book Date", BookDate);
                 ticket.put("Checkout Date", CheckoutDate);
                 ticket.put("Email", UserEmail);
+                ticket.put("Number of guest", NumberOfPeople);
                 ticket.put("Price",Price);
                 //
                 db.collection("ticket").add(ticket).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(HotelBookingActivity.this,"",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HotelBookingActivity.this,"Success",Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
